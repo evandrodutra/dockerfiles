@@ -1,0 +1,5 @@
+.DS_Store
+*.tmTheme.cache
+*.swp
+*.bkp
+*.local
