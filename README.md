@@ -1,6 +1,6 @@
 # Dockerfiles
 
-Collection of Dockerfiles for [Ruby](https://github.com/evandrodutra/dockerfiles/ruby-notebooks), [R](https://github.com/evandrodutra/dockerfiles/r-notebooks), [SCI Python](https://github.com/evandrodutra/dockerfiles/python-notebooks)
+Collection of Dockerfiles for [Ruby](https://github.com/evandrodutra/dockerfiles/tree/master/ruby-notebooks), [R](https://github.com/evandrodutra/dockerfiles/tree/master/r-notebooks), [SCI Python](https://github.com/evandrodutra/dockerfiles/tree/master/python-notebooks)
 
 [Docker Hub](https://hub.docker.com/r/evandrodutra/)
 
