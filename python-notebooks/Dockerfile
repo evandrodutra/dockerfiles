@@ -6,7 +6,7 @@ USER root
 
 RUN apt-get update && apt-get install -yq \
     libav-tools \
-    gcc && apt-get clean && cd ~
+    gcc && apt-get clean && cd ~ \
     rm -rf /var/lib/apt/lists/*
 
 USER $NB_USER
