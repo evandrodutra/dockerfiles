@@ -6,7 +6,7 @@
 
 ```bash
 docker pull evandrodutra/r-notebooks
-docker run -d -p 8888:8888 -v "$(pwd):/notebooks" evandrodutra/r-notebooks start-notebook.sh --NotebookApp.base_url=/notebooks
+docker run -d -p 8888:8888 -v "$(pwd)/notebooks:$/home/jovyan/work" evandrodutra/r-notebooks start-notebook.sh --NotebookApp.token='' --NotebookApp.base_url=/
 ```
 
-Access in your browser [docker.local:8888/notebooks](http://docker.local:8888/notebooks/tree)
+Access in your browser [docker.local:8888/](http://docker.local:8888/tree)
