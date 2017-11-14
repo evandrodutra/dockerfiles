@@ -23,7 +23,6 @@ RUN ln -s /usr/bin/libtoolize /usr/bin/libtool
 
 RUN gem install --no-document \
     rbczmq \
-    awesome_print \
     gruff \
     rmagick \
     gnuplot \
