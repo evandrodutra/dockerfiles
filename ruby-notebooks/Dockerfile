@@ -5,23 +5,33 @@ MAINTAINER Evandro Dutra <evandro.eld@gmail.com>
 USER root
 
 RUN apt-get update && apt-get install -yq \
+    autoconf \
+    libssl-dev \
     libtool \
     libffi-dev \
+    libzmq-dev \
+    libgdbm-dev \
+    libmagickwand-dev \
+    libreadline-dev \
     ruby \
     ruby-dev \
-    make \
     git \
-    libzmq-dev \
-    autoconf \
-    pkg-config \
     && apt-get clean && cd ~ \
     rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/zeromq/czmq \
-    cd czmq \
-    ./autogen.sh && ./configure && sudo make && sudo make install
+RUN ln -s /usr/bin/libtoolize /usr/bin/libtool
+
+RUN gem install --no-document \
+    rbczmq \
+    awesome_print \
+    gruff \
+    rmagick \
+    gnuplot \
+    rubyvis \
+    rbczmq \
+    cztop \
+    iruby
 
 USER $NB_USER
 
-RUN gem install cztop iruby \
-    iruby register --force
+RUN iruby register --force
