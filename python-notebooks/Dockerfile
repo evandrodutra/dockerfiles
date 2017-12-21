@@ -41,6 +41,7 @@ RUN conda update --all && \
     'psutil' \
     'tensorflow' \
     'seaborn' \
+    'folium' \
     'xlrd'  && \
     conda remove --quiet --yes --force qt pyqt && \
     conda clean -tipsy && \
