@@ -4,42 +4,48 @@ MAINTAINER Evandro Dutra <evandro.eld@gmail.com>
 
 USER root
 
+ENV LANGUAGE en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+ENV PYTHONIOENCODING UTF-8
+
 RUN apt-get update && apt-get install -yq \
     libav-tools \
     gcc && apt-get clean && cd ~ \
     rm -rf /var/lib/apt/lists/*
 
 USER $NB_USER
-RUN conda install --quiet --yes \
+
+RUN conda update --all && \
+    conda install --quiet --yes \
     'nomkl' \
-    'ipywidgets=7.0*' \
-    'pandas=0.21*' \
-    'numexpr=2.6*' \
-    'matplotlib=2.0*' \
-    'scipy=1.0*' \
-    'scikit-learn=0.19*' \
-    'scikit-image=0.13*' \
-    'sympy=1.1*' \
-    'patsy=0.4*' \
-    'statsmodels=0.8*' \
-    'dill=0.2*' \
-    'numba=0.36*' \
-    'bokeh=0.12*' \
-    'hdf5=1.10*' \
-    'h5py=2.7*' \
-    'vincent=0.4*' \
-    'protobuf=3.4*' \
-    'numpy=1.13*' \
-    'Pillow=4.3*' \
-    'psutil=5.4*' \
-    'tensorflow=1.4*' \
+    'ipywidgets' \
+    'pandas' \
+    'numexpr' \
+    'matplotlib' \
+    'scipy' \
+    'scikit-learn' \
+    'scikit-image' \
+    'sympy' \
+    'patsy' \
+    'statsmodels' \
+    'dill' \
+    'numba' \
+    'bokeh' \
+    'hdf5' \
+    'h5py' \
+    'vincent' \
+    'protobuf' \
+    'numpy' \
+    'Pillow' \
+    'psutil' \
+    'tensorflow' \
+    'seaborn' \
     'xlrd'  && \
     conda remove --quiet --yes --force qt pyqt && \
     conda clean -tipsy && \
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     fix-permissions $CONDA_DIR
-
-RUN conda install -c conda-forge jupyter_nbextensions_configurator
 
 RUN cd /tmp && \
     git clone https://github.com/PAIR-code/facets.git && \
