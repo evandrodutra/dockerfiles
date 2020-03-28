@@ -1,5 +1,4 @@
-FROM nvidia/cuda:10.1-devel-ubuntu18.04
-FROM jupyter/minimal-notebook
+FROM tensorflow/tensorflow:latest-gpu-py3
 
 MAINTAINER Evandro Dutra <evandro.eld@gmail.com>
 
