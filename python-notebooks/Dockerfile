@@ -1,3 +1,4 @@
+FROM nvidia/cuda:10.1-devel-ubuntu18.04
 FROM jupyter/minimal-notebook
 
 MAINTAINER Evandro Dutra <evandro.eld@gmail.com>
@@ -39,7 +40,7 @@ RUN conda update --all && \
     'numpy' \
     'Pillow' \
     'psutil' \
-    'tensorflow' \
+    'tensorflow-gpu' \
     'seaborn' \
     'folium' \
     'xlrd'  && \
